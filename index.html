@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratório Anti-Tela Infantil: Protocolo de 21 Dias</title>
+  <meta name="description" content="O protocolo de 21 dias que desintoxica seu filho do celular sem birra, sem choro e sem culpa, trocando a dopamina da tela por experimentos que prendem a atenção de verdade.">
+
+  <!-- ============================================================
+       ⚠️ ZONA DE PLACEHOLDER: META PIXEL
+       Substitua SEU_PIXEL_ID pelo ID real do seu Pixel
+  ============================================================ -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            petrol:  '#0E3A4A',   /* azul-petróleo profundo: seriedade científica */
+            petrold: '#092833',
+            mint:    '#E7F6EF',   /* fundo "laboratório limpo" */
+            lab:     '#12A47B',   /* verde de ação/CTA */
+            labd:    '#0C7D5D',
+            coral:   '#FF5A4E',   /* alerta / urgência */
+            sand:    '#FBFAF6',   /* off-white quente */
+            ink:     '#1C2B33'
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .display { font-family: 'Bricolage Grotesque', sans-serif; }
+
+    /* Termômetro */
+    .sinal-card { transition: all .2s ease; cursor: pointer; user-select: none; }
+    .sinal-card.checked { border-color: #FF5A4E; background: #FFF1F0; }
+    .sinal-card.checked .checkbox { background: #FF5A4E; border-color: #FF5A4E; }
+    .sinal-card.checked .checkbox svg { opacity: 1; }
+    #termo-fill { transition: width .5s ease, background-color .5s ease; }
+
+    /* FAQ */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-arrow { transition: transform .3s ease; }
+
+    /* CTA pulse (respeita reduced motion) */
+    @media (prefers-reduced-motion: no-preference) {
+      .cta-pulse { animation: ctapulse 2.2s infinite; }
+      @keyframes ctapulse {
+        0%,100% { box-shadow: 0 0 0 0 rgba(18,164,123,.45); }
+        50% { box-shadow: 0 0 0 14px rgba(18,164,123,0); }
+      }
+    }
+
+    .grade-lab { background-image: radial-gradient(rgba(14,58,74,.08) 1px, transparent 1px); background-size: 22px 22px; }
+  </style>
+</head>
+
+<body class="bg-sand text-ink antialiased">
+
+<!-- ================= HERO ================= -->
+<header class="grade-lab bg-mint">
+  <div class="max-w-3xl mx-auto px-5 pt-12 pb-14 text-center">
+
+    <!-- ⚠️ PLACEHOLDER: substitua pelo número REAL de famílias/alunas -->
+    <span class="inline-block bg-petrol text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full mb-6">
+      🔬 Mais de 20.000 famílias já adquiriram o Laboratório
+    </span>
+
+    <h1 class="display text-4xl md:text-6xl font-extrabold text-petrol leading-tight">
+      LABORATÓRIO<br>
+      <span class="text-coral">ANTI-TELA</span> INFANTIL
+    </h1>
+
+    <p class="mt-6 text-lg md:text-xl text-ink/80 leading-relaxed">
+      O protocolo guiado de <strong>21 dias</strong> que desintoxica seu filho do celular
+      <strong>sem birra, sem choro e sem você virar a vilã da história</strong>, trocando a
+      dopamina da tela por experimentos que prendem a atenção de verdade.
+    </p>
+
+    <p class="mt-8 text-sm font-semibold text-petrol uppercase tracking-wide">▼ Assista antes de continuar ▼</p>
+
+    <!-- ⚠️ PLACEHOLDER: troque SEU_VIDEO_VSL pelo ID/URL do seu vídeo no Vimeo -->
+    <div class="mt-4 aspect-[9/16] max-w-[380px] mx-auto rounded-2xl overflow-hidden shadow-xl bg-petrold">
+      <iframe src="https://player.vimeo.com/video/1210276774?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Vídeo de apresentação"></iframe>
+    </div>
+  </div>
+</header>
+
+<!-- ================= DOR / PENSAMENTOS ================= -->
+<section class="py-16 px-5">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-center text-coral font-bold uppercase tracking-widest text-sm">Você já teve pensamentos assim?</p>
+
+    <div class="mt-10 space-y-4">
+      <div class="bg-white border-l-4 border-coral rounded-xl p-5 shadow-sm italic text-ink/80">"Entrego o celular só pra ter 10 minutos de paz… e depois me sinto a pior mãe do mundo."</div>
+
+    <div class="mt-10 space-y-4">
+      <div class="bg-white border-l-4 border-coral rounded-xl p-5 shadow-sm italic text-ink/80">"Quando eu tiro a tela, ele grita, chora, se joga no chão. É mais fácil devolver e fingir que está tudo bem."</div>
+      <div class="bg-white border-l-4 border-coral rounded-xl p-5 shadow-sm italic text-ink/80">"Meu filho não sabe mais brincar. Sem tela, ele fica perdido, entediado, irritado."</div>
+      <div class="bg-white border-l-4 border-coral rounded-xl p-5 shadow-sm italic text-ink/80">"Ele não olha mais nos meus olhos quando eu falo com ele."</div>
+      <div class="bg-white border-l-4 border-coral rounded-xl p-5 shadow-sm italic text-ink/80">"Tenho medo de estar criando um viciado… e só descobrir quando for tarde demais."</div>
+    </div>
+
+    <p class="text-center mt-8 text-lg font-semibold text-petrol">Se você leu isso e sentiu um aperto no peito, continue lendo... As próximas linhas foram escritas para você.</p>
+  </div>
+</section>
+
+<!-- ================= A VERDADE QUE NINGUÉM CONTA ================= -->
+<section class="bg-petrol text-white py-16 px-5">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-center text-coral font-bold uppercase tracking-widest text-sm">O que ninguém teve coragem de te contar</p>
+    <h2 class="display text-center text-3xl md:text-4xl font-bold mt-3">A culpa não é sua. Mas a solução, sim.</h2>
+
+    <div class="mt-10 grid gap-5 text-white/90 text-lg leading-relaxed">
+      <div class="bg-white/10 border border-white/15 rounded-2xl p-6">
+        <p>❌ <strong>Não é falta de limite seu. É neurociência.</strong> Os aplicativos e jogos que seu filho usa são projetados por equipes de psicólogos, designers comportamentais e especialistas em retenção para manter a atenção pelo maior tempo possível. Cada animação, recompensa e vídeo curto ativa os circuitos de recompensa do cérebro, fazendo a criança querer "só mais um".</strong></p>
+      </div>
+
+      <div class="bg-white/10 border border-white/15 rounded-2xl p-6">
+        <p>🧠 <strong>A birra quando você tira o celular não acontece por acaso</strong>. O cérebro infantil se acostuma com a recompensa rápida das telas. Quando esse estímulo desaparece de repente, é comum surgirem choro, irritação e explosões emocionais. O problema não é apenas o celular, e sim a forma como ele condiciona o cérebro a buscar cada vez mais estímulos.</p>
+      </div>
+
+      <div class="bg-white/10 border border-white/15 rounded-2xl p-6">
+        <p>⏳ <strong>O cérebro do seu filho está sendo programado todos os dias.</strong> É na infância que se formam as conexões responsáveis pela <strong>linguagem, atenção, criatividade e autocontrole.</strong> Quando a tela ocupa esse tempo, ela substitui experiências que nenhum aplicativo consegue oferecer. Não é por acaso que a Sociedade Brasileira de Pediatria recomenda zero telas antes dos 2 anos e uso limitado após essa idade.</p>
+      </div>
+
+      <div class="bg-white/10 border border-white/15 rounded-2xl p-6">
+        <p>🚨 <strong>A maior ilusão é acreditar que esse problema vai passar sozinho. </strong> 
+          Quanto mais tempo a tela ocupa o lugar das <strong>brincadeiras, das conversas e das descobertas</strong> mais esse hábito se fortalece. A boa notícia é que, quando a criança recebe os estímulos certos, é possível reconstruir uma relação muito mais saudável com a tecnologia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TERMÔMETRO INTERATIVO (ELEMENTO ASSINATURA) ================= -->
+<section class="py-16 px-5 bg-mint grade-lab">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-center text-petrol font-bold uppercase tracking-widest text-sm">🔬 Teste agora, gratuito</p>
+    <h2 class="display text-center text-3xl md:text-4xl font-bold text-petrol mt-3">Termômetro do Vício em Telas</h2>
+    <p class="text-center mt-3 text-ink/70">Marque abaixo os sinais que você reconhece no seu filho. Seja honesta, ninguém está vendo.</p>
+
+    <div id="sinais" class="mt-8 grid gap-3">
+      <!-- cada card soma 1 ponto -->
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Pede o celular assim que acorda</span>
+      </div>
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Faz birra intensa quando a tela é retirada</span>
+      </div>
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Perdeu o interesse em brinquedos que antes amava</span>
+      </div>
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Não consegue esperar (fila, consultório, restaurante) sem tela</span>
+      </div>
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Só come assistindo alguma coisa</span>
+      </div>
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Dorme tarde ou dorme mal por causa das telas</span>
+      </div>
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Não brinca sozinho por mais de 10 minutos</span>
+      </div>
+      <div class="sinal-card bg-white border-2 border-transparent rounded-xl p-4 flex items-center gap-4 shadow-sm" onclick="toggleSinal(this)">
+        <span class="checkbox w-6 h-6 rounded-md border-2 border-ink/30 flex items-center justify-center shrink-0"><svg class="w-4 h-4 text-white opacity-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+        <span>Fica irritado ou agressivo em dias com menos tela</span>
+      </div>
+    </div>
+
+    <!-- barra do termômetro -->
+    <div class="mt-8 bg-white rounded-2xl p-6 shadow-md">
+      <div class="flex justify-between text-xs font-semibold text-ink/50 mb-2">
+        <span>0 sinais</span><span>8 sinais</span>
+      </div>
+      <div class="h-4 bg-ink/10 rounded-full overflow-hidden">
+        <div id="termo-fill" class="h-full rounded-full bg-lab" style="width:0%"></div>
+      </div>
+      <p id="termo-result" class="mt-4 text-center font-semibold text-ink/70">Marque os sinais acima para ver o resultado do seu filho.</p>
+      <div id="termo-cta" class="hidden text-center mt-4">
+        <a href="#consequencias" class="inline-block bg-coral hover:bg-red-500 text-white font-bold px-6 py-3 rounded-full transition">CONTINUAR LENDO →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONSEQUÊNCIAS ================= -->
+<section id="consequencias" class="py-16 px-5">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="display text-3xl md:text-4xl font-bold text-petrol">Esse problema não desaparece sozinho</h2>
+    <p class="mt-4 text-lg text-ink/70">Quando o vício em telas não é tratado cedo, a conta chega, e ela é alta:</p>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-4 text-left">
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-ink/5">😶 <strong>Atraso de fala e vocabulário pobre:</strong> a tela fala <em>para</em> a criança, nunca <em>com</em> ela</div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-ink/5">📉 <strong>Dificuldade de foco na escola:</strong> o cérebro acostumado a estímulo rápido não aguenta uma aula</div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-ink/5">😤 <strong>Baixa tolerância à frustração:</strong> birras cada vez maiores por coisas cada vez menores</div>
+      <div class="bg-white rounded-xl p-5 shadow-sm border border-ink/5">💔 <strong>Distanciamento de você:</strong> a tela vira a principal fonte de prazer, e a família vira plano de fundo</div>
+    </div>
+
+    <div class="mt-10 rounded-2xl overflow-hidden shadow-xl">
+      <img src="https://raw.githubusercontent.com/guiadesenvolvimentoinfantil/kids/main/ChatGPT%20Image%2016%20de%20jul.%20de%202026%2C%2013_02_00.png" alt="Antes e depois: rotina com tela x rotina sem tela" class="w-full h-auto">
+    </div>
+
+    <p class="mt-8 text-xl font-bold text-petrol">Mas existe uma saída, e ela não exige que você proíba tudo nem vire refém da culpa.</p>
+  </div>
+</section>
+
+<!-- ================= APRESENTAÇÃO DO PRODUTO ================= -->
+<section class="bg-petrol text-white py-16 px-5">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-coral font-bold uppercase tracking-widest text-sm">Apresentando</p>
+    <h2 class="display text-3xl md:text-5xl font-extrabold mt-3">O Laboratório Anti-Tela Infantil</h2>
+    <p class="mt-6 text-lg text-white/85 leading-relaxed">
+      O <strong>Laboratório Anti-Tela Infantil</strong> é um protocolo guiado de 21 dias inspirado na<strong> psicologia do desenvolvimento, neurociência infantil e formação de hábitos.</strong> Em vez de proibir o celular de forma brusca, ele trabalha com o funcionamento natural do<strong> cérebro da criança</strong>, substituindo os estímulos digitais por experiências práticas que fortalecem<strong> atenção, autonomia, criatividade e vínculo familiar </strong> sem guerra e sem culpa.
+    </p>
+
+    <div class="mt-10 max-w-xs mx-auto">
+      <img src="https://raw.githubusercontent.com/laboratorioinfantiloficial/kids/main/ChatGPT%20Image%2018%20de%20jul.%20de%202026%2C%2018_41_00.png" alt="Laboratório Anti-Tela Infantil: capa do protocolo" class="w-full h-auto rounded-2xl shadow-2xl">
+    </div>
+  </div>
+</section>
+
+<!-- ================= AS 3 FASES ================= -->
+<section class="py-16 px-5">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-center text-coral font-bold uppercase tracking-widest text-sm">Como funciona</p>
+    <h2 class="display text-center text-3xl md:text-4xl font-bold text-petrol mt-3">O Protocolo de 21 Dias em 3 fases</h2>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-coral">
+        <span class="display text-coral font-extrabold text-sm">FASE 1 · DIAS 1–7</span>
+        <h3 class="display text-xl font-bold text-petrol mt-2">Redução Sem Guerra</h3>
+        <p class="mt-3 text-ink/70">Nada de arrancar o celular da mão. Você aplica trocas graduais, rotina visual e combinados que a criança aceita, porque foram desenhados para o cérebro dela, não contra ele.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-lab">
+        <span class="display text-lab font-extrabold text-sm">FASE 2 · DIAS 8–14</span>
+        <h3 class="display text-xl font-bold text-petrol mt-2">Substituição de Dopamina</h3>
+        <p class="mt-3 text-ink/70">Mais de 100 "experimentos" mão na massa com material que você já tem em casa, organizados por idade (2 a 10 anos) e por momento de fissura: tédio, hora da comida, espera, fim de tarde.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-md border-t-4 border-petrol">
+        <span class="display text-petrol font-extrabold text-sm">FASE 3 · DIAS 15–21</span>
+        <h3 class="display text-xl font-bold text-petrol mt-2">Reconexão</h3>
+        <p class="mt-3 text-ink/70">Brincadeiras de vínculo, autonomia do brincar sozinho e as novas regras de tela da família, sustentáveis, sem radicalismo, para o resultado durar depois do dia 21.</p>
+      </div>
+    </div>
+
+    <p class="text-center mt-8 text-ink/70 text-lg">⏱️ Apenas <strong>15 minutos por dia</strong> de aplicação. Sem materiais caros. Sem formação técnica.</p>
+  </div>
+</section>
+
+<!-- ================= PROVA SOCIAL ================= -->
+<section class="bg-mint py-16 px-5">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-petrol font-bold uppercase tracking-widest text-sm">Prova social</p>
+    <h2 class="display text-3xl md:text-4xl font-bold text-petrol mt-3">O que as mães estão percebendo</h2>
+
+    <!-- ⚠️ PLACEHOLDER: troque SEU_VIDEO_DEPOIMENTO pelo ID/URL do vídeo real de depoimento -->
+    <p class="mt-8 text-sm font-semibold text-petrol uppercase tracking-wide">Assista ao depoimento de uma mãe que já aplicou o protocolo</p>
+    <div class="mt-4 aspect-[9/16] max-w-[380px] mx-auto rounded-2xl overflow-hidden shadow-xl bg-petrold">
+      <iframe src="https://player.vimeo.com/video/1211084889?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen" allowfullscreen title="Depoimento em vídeo"></iframe>
+    </div>
+
+    <!-- ⚠️ ZONA DE PLACEHOLDER: DEPOIMENTOS
+         Insira aqui apenas depoimentos REAIS de clientes (prints de WhatsApp
+         convertem mais que texto). Estrutura pronta abaixo, 8 slots no carrossel: -->
+    <div class="mt-12 relative">
+      <div class="overflow-hidden rounded-2xl">
+        <div id="depo-track" class="flex transition-transform duration-500 ease-out">
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"Eu já não conseguia fazer nada em casa sem entregar o celular. Quando tirava, era um choro sem fim. Achei que seria impossível mudar isso, mas com as atividades do Laboratório ele começou a brincar sozinho de novo. Hoje pede o celular muito menos e nossa rotina ficou muito mais leve."</p>
+              <p class="mt-3 font-bold text-petrol">Juliana, mãe do Pedro (4 anos)</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"Minha filha só aceitava comer assistindo desenho. Eu já tinha tentado de tudo. Depois de aplicar o protocolo, ela voltou a fazer as refeições conversando com a gente. Parece uma mudança pequena, mas transformou completamente nosso dia."</p>
+              <p class="mt-3 font-bold text-petrol">Fernanda, mãe da Alice (6 anos)</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"Eu vivia me culpando por deixar meu filho tanto tempo na tela. O que mais gostei foi que o Laboratório não manda simplesmente proibir o celular. As mudanças aconteceram aos poucos e sem aquelas brigas enormes que a gente tinha."</p>
+              <p class="mt-3 font-bold text-petrol">Camila, mãe do Miguel (5 anos)</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"Minha filha parecia não se interessar por nenhum brinquedo. Só queria vídeos. Depois de alguns dias fazendo as atividades, ela começou a desenhar, montar blocos e brincar pela casa novamente. Foi emocionante ver isso acontecer."</p>
+              <p class="mt-3 font-bold text-petrol">Patrícia, mãe da Helena (3 anos)</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"O Davi ficava irritado por qualquer coisa quando desligávamos o celular. Hoje ele continua usando tela, mas dentro de horários combinados. O mais importante é que voltou a conversar mais com a gente e passa muito mais tempo brincando."</p>
+              <p class="mt-3 font-bold text-petrol">Renata, mãe do Davi (8 anos)</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"Foi um dos melhores investimentos que fiz. Achei que seria mais um material cheio de teoria, mas é muito prático. Em poucos dias já percebi meu filho muito menos dependente do celular."</p>
+              <p class="mt-3 font-bold text-petrol">Mariana, mãe do Theo (7 anos)</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"Eu estava realmente preocupada porque meu filho passava horas no celular e não queria fazer mais nada. O Laboratório me mostrou uma forma de mudar isso sem brigar o tempo todo. Hoje ele brinca, lê, conversa mais e nossa casa ficou muito mais tranquila."</p>
+              <p class="mt-3 font-bold text-petrol">Larissa, mãe do Gabriel (9 anos)</p>
+            </div>
+          </div>
+          <div class="w-full shrink-0 px-1">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-dashed border-petrol/20 text-left min-h-[180px]">
+              <p class="text-amber-500">★★★★★</p>
+              <p class="mt-2 italic text-ink/70">"O que mais me surpreendeu foi que as atividades usam coisas que já temos em casa. Minha filha ficou super animada com os desafios e quase nem lembrava de pedir o celular durante a tarde. Nossa relação melhorou muito."</p>
+              <p class="mt-3 font-bold text-petrol">Carolina, mãe da Sofia (5 anos)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="depoMove(-1)" aria-label="Depoimento anterior" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-5 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-petrol font-bold hover:bg-lab hover:text-white transition">‹</button>
+      <button onclick="depoMove(1)" aria-label="Próximo depoimento" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-5 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-petrol font-bold hover:bg-lab hover:text-white transition">›</button>
+
+      <div id="depo-dots" class="flex justify-center gap-2 mt-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ / OBJEÇÕES ================= -->
+<section class="py-16 px-5">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-center text-coral font-bold uppercase tracking-widest text-sm">Ainda na dúvida?</p>
+    <h2 class="display text-center text-3xl md:text-4xl font-bold text-petrol mt-3">O que outras mães perguntaram antes de adquirir</h2>
+
+    <div class="mt-10 space-y-3">
+      <div class="faq-item bg-white rounded-xl shadow-sm border border-ink/5">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left text-petrol" onclick="toggleFaq(this)">
+          "Meu filho é MUITO viciado. Isso funciona pra ele?"
+          <span class="faq-arrow text-coral">▼</span>
+        </button>
+        <div class="faq-answer px-5"><p class="pb-5 text-ink/70">Foi exatamente para esses casos que o protocolo foi desenhado em fases. Não existe corte seco: a Fase 1 reduz de forma gradual, sem gerar a explosão de abstinência. Quanto mais intenso o vício, mais importante seguir o passo a passo (e mais visível fica a transformação).</p></div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl shadow-sm border border-ink/5">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left text-petrol" onclick="toggleFaq(this)">
+          "Isso é baseado em ciência de verdade ou é só opinião?"
+          <span class="faq-arrow text-coral">▼</span>
+        </button>
+        <div class="faq-answer px-5"><p class="pb-5 text-ink/70">O protocolo se apoia em recomendações de neurodesenvolvimento infantil e nos limites de tempo de tela indicados pela Sociedade Brasileira de Pediatria. Nenhum passo depende de "achismo": cada fase existe para reduzir a resposta de abstinência e reconstruir o foco de forma gradual, respeitando o ritmo do cérebro em desenvolvimento.</p></div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl shadow-sm border border-ink/5">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left text-petrol" onclick="toggleFaq(this)">
+          "Eu trabalho o dia todo, não tenho tempo."
+          <span class="faq-arrow text-coral">▼</span>
+        </button>
+        <div class="faq-answer px-5"><p class="pb-5 text-ink/70">O protocolo pede 15 minutos por dia, e boa parte dos experimentos ensina a criança a brincar <strong>sozinha</strong>. Ou seja: com o tempo, o Laboratório te devolve tempo, em vez de tomar.</p></div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl shadow-sm border border-ink/5">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left text-petrol" onclick="toggleFaq(this)">
+          "O problema é que o pai / os avós entregam a tela."
+          <span class="faq-arrow text-coral">▼</span>
+        </button>
+        <div class="faq-answer px-5"><p class="pb-5 text-ink/70">Por isso o protocolo inclui o <strong>Contrato da Família Desconectada</strong> e um roteiro pronto de alinhamento com quem convive com a criança. Você não vai brigar com ninguém: vai colocar todo mundo no mesmo time, com regras claras e lúdicas.</p></div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl shadow-sm border border-ink/5">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left text-petrol" onclick="toggleFaq(this)">
+          "Eu preciso da tela às vezes. Vou ter que proibir tudo?"
+          <span class="faq-arrow text-coral">▼</span>
+        </button>
+        <div class="faq-answer px-5"><p class="pb-5 text-ink/70">Não. O Laboratório não demoniza a tecnologia: o objetivo é a tela voltar a ser <strong>ferramenta</strong>, e deixar de ser <strong>babá</strong>. No fim do protocolo, sua família terá regras de uso consciente que cabem na SUA rotina real.</p></div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl shadow-sm border border-ink/5">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left text-petrol" onclick="toggleFaq(this)">
+          "E se eu aplicar tudo certinho e não funcionar com o meu filho?"
+          <span class="faq-arrow text-coral">▼</span>
+        </button>
+        <div class="faq-answer px-5"><p class="pb-5 text-ink/70">Você tem <strong>7 dias de garantia incondicional</strong> para testar a Fase 1 inteira. Se não sentir diferença nenhuma, é só pedir o reembolso, sem perguntas e sem burocracia. O risco de experimentar é todo nosso, não seu.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OFERTA ================= -->
+<section id="oferta" class="bg-petrold text-white py-16 px-5 grade-lab">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-center text-coral font-bold uppercase tracking-widest text-sm">Oferta Especial</p>
+    <h2 class="display text-center text-3xl md:text-4xl font-extrabold mt-3">Tudo o que você recebe hoje no Laboratório:</h2>
+
+    <ul class="mt-10 space-y-4 text-lg">
+      <li class="flex gap-3"><span class="text-lab font-bold">✔</span><span><strong class="text-yellow-300">Protocolo Anti-Tela de 21 Dias</strong>: o passo a passo guiado, dia a dia, nas 3 fases</span></li>
+      <li class="flex gap-3"><span class="text-lab font-bold">✔</span><span><strong class="text-yellow-300">+100 Experimentos Anti-Tela</strong> por faixa etária (2 a 10 anos), com material que você já tem em casa</span></li>
+      <li class="flex gap-3"><span class="text-lab font-bold">✔</span><span><strong class="text-yellow-300">Termômetro do Vício em Telas</strong>: teste completo para aplicar no dia 1 e refazer no dia 21 e VER a evolução</span></li>
+      <li class="flex gap-3"><span class="text-lab font-bold">✔</span><span><strong class="text-yellow-300">Cartas de Emergência da Birra</strong>: o que dizer, palavra por palavra, quando seu filho explodir sem a tela</span></li>
+      <li class="flex gap-3"><span class="text-lab font-bold">✔</span><span><strong class="text-yellow-300">Rotina Visual imprimível</strong>: a criança enxerga o dia dela e para de brigar por tela</span></li>
+      <li class="flex gap-3"><span class="text-coral font-bold">🎁</span><span><strong class="text-red-300">BÔNUS 1: Guia Tela Zero nas Refeições</strong>: o método para seu filho voltar a comer sem desenho</span></li>
+      <li class="flex gap-3"><span class="text-coral font-bold">🎁</span><span><strong class="text-red-300">BÔNUS 2: Contrato da Família Desconectada</strong>: o acordo lúdico que a criança assina (e cobra dos adultos!)</span></li>
+      <li class="flex gap-3"><span class="text-lab font-bold">✔</span><span><strong class="text-yellow-300">Acesso imediato e vitalício</strong>: pelo celular, tablet ou computador, entregue por WhatsApp e e-mail</span></li>
+    </ul>
+
+    <div class="mt-12 bg-white text-ink rounded-3xl p-8 text-center shadow-2xl">
+      <!-- ⚠️ PLACEHOLDER: ajuste os valores reais da sua oferta -->
+      <p class="text-ink/50">De <span class="line-through">R$ 147,00</span></p>
+      <p class="display text-5xl font-extrabold text-petrol mt-1">R$ 67,00</p>
+      <p class="mt-1 text-ink/60">pagamento único · ou em até 12x</p>
+
+      <!-- ⚠️ PLACEHOLDER: troque pelo seu link GGCheckout -->
+      <a href="https://ggcheckout.app/checkout/v5/xZEmp7o8qaEshv5IOIjR" class="cta-pulse block mt-6 bg-lab hover:bg-labd text-white font-extrabold text-lg md:text-xl px-6 py-5 rounded-full transition">
+        QUERO ADQUIRIR O LABORATÓRIO AGORA →
+      </a>
+
+      <div class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-ink/50">
+        <span>📱 Acesso pelo celular</span>
+        <span>♾️ Acesso vitalício</span>
+        <span>🔒 Compra 100% segura</span>
+      </div>
+    </div>
+
+    <!-- GARANTIA -->
+    <div class="mt-10 bg-white/10 border border-white/20 rounded-2xl p-6 text-center">
+      <p class="display text-2xl font-bold">🛡️ Garantia Incondicional de 7 Dias</p>
+      <p class="mt-3 text-white/80">Entre no Laboratório, aplique a Fase 1 inteira e sinta a diferença. Se por QUALQUER motivo você não ficar satisfeita, é só mandar uma mensagem: devolvemos 100% do valor, sem perguntas e sem burocracia. O risco é todo nosso.</p>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="mt-10 bg-gradient-to-br from-white/10 to-white/5 border border-white/15 rounded-3xl p-8 md:p-10 text-center">
+      <img src="https://raw.githubusercontent.com/laboratorioinfantiloficial/kids/main/ChatGPT%20Image%2018%20de%20jul.%20de%202026%2C%2018_41_00.png" alt="Laboratório Anti-Tela Infantil: capa do protocolo" class="w-full max-w-[220px] h-auto rounded-2xl shadow-2xl mx-auto mb-8">
+      <p class="display text-2xl md:text-3xl font-bold text-white leading-snug">
+        Daqui a 21 dias, seu filho pode continuar exatamente como está hoje,<br class="hidden md:block">
+        ou pode estar brincando no chão da sala enquanto o celular fica esquecido no sofá.
+      </p>
+      <p class="mt-4 text-lg font-bold text-coral">A diferença entre os dois cenários é a decisão que você toma agora.</p>
+
+      <a href="https://ggcheckout.app/checkout/v5/xZEmp7o8qaEshv5IOIjR" class="cta-pulse inline-block mt-8 bg-coral hover:bg-red-500 text-white font-extrabold text-lg md:text-xl px-8 py-5 rounded-full shadow-xl transition">
+        QUERO MEU FILHO DE VOLTA →
+      </a>
+
+      <div class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/70">
+        <span>🛡️ Garantia de 7 dias</span>
+        <span>🔒 Pagamento seguro</span>
+        <span>⚡ Acesso imediato</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-ink text-white/60 py-12 px-5 text-sm">
+  <div class="max-w-3xl mx-auto space-y-6">
+    <p class="text-white font-bold display text-lg">Laboratório Anti-Tela Infantil</p>
+    <p>Um protocolo digital de 21 dias para reduzir o tempo de tela infantil e reconstruir a conexão da família através de atividades práticas.</p>
+
+    <div>
+      <p class="text-white font-semibold mb-1">Política de Privacidade</p>
+      <p>Suas informações pessoais são tratadas com total confidencialidade e não são compartilhadas com terceiros. Ao realizar a compra, você concorda com o tratamento dos seus dados para fins de entrega do produto digital adquirido, em conformidade com a LGPD (Lei nº 13.709/2018).</p>
+    </div>
+
+    <div>
+      <p class="text-white font-semibold mb-1">Termos de Uso</p>
+      <p>O produto adquirido é de uso pessoal e intransferível. É proibida a reprodução, distribuição ou comercialização do conteúdo sem autorização expressa. O acesso é liberado após a confirmação do pagamento. A garantia de 7 dias vale a partir da data de compra.</p>
+    </div>
+
+    <!-- ⚠️ PLACEHOLDER: troque pelo seu e-mail real de suporte -->
+    <p>Suporte: <a href="mailto:laboratorioantitelainfantil@gmail.com" class="underline">laboratorioantitelainfantil@laboratorio.com</a></p>
+
+    <p>© 2026 Laboratório Anti-Tela Infantil. Todos os direitos reservados.</p>
+    <p class="text-white/40">Este produto é um material digital para fins educacionais. Não substitui avaliação ou acompanhamento médico, psicológico ou pedagógico especializado. Resultados podem variar de criança para criança.</p>
+  </div>
+</footer>
+
+<script>
+  /* ===== Termômetro interativo ===== */
+  let pontos = 0;
+  function toggleSinal(card) {
+    card.classList.toggle('checked');
+    pontos = document.querySelectorAll('.sinal-card.checked').length;
+    const fill = document.getElementById('termo-fill');
+    const result = document.getElementById('termo-result');
+    const cta = document.getElementById('termo-cta');
+    const pct = (pontos / 8) * 100;
+    fill.style.width = pct + '%';
+
+    if (pontos === 0) {
+      fill.style.backgroundColor = '#12A47B';
+      result.innerHTML = 'Marque os sinais acima para ver o resultado do seu filho.';
+      cta.classList.add('hidden');
+    } else if (pontos <= 2) {
+      fill.style.backgroundColor = '#12A47B';
+      result.innerHTML = '🟢 <strong>Fase de alerta inicial.</strong> Ainda dá para reverter com facilidade: este é o MELHOR momento para agir, antes que os sinais aumentem.';
+      cta.classList.remove('hidden');
+    } else if (pontos <= 5) {
+      fill.style.backgroundColor = '#F5A623';
+      result.innerHTML = '🟡 <strong>Dependência moderada.</strong> O cérebro do seu filho já associa a tela à principal fonte de prazer. Com o protocolo certo, a recuperação é rápida, mas cada mês de espera aprofunda o padrão.';
+      cta.classList.remove('hidden');
+    } else {
+      fill.style.backgroundColor = '#FF5A4E';
+      result.innerHTML = '🔴 <strong>Dependência avançada.</strong> Seu filho apresenta a maioria dos sinais de vício em telas. A boa notícia: o cérebro infantil se recupera rápido quando recebe os estímulos certos, e o protocolo foi desenhado exatamente para casos como o dele.';
+      cta.classList.remove('hidden');
+    }
+  }
+
+  /* ===== FAQ ===== */
+  function toggleFaq(btn) {
+    btn.closest('.faq-item').classList.toggle('open');
+  }
+
+  /* ===== Carrossel de depoimentos ===== */
+  const depoTrack = document.getElementById('depo-track');
+  const depoTotal = depoTrack.children.length;
+  const depoDotsWrap = document.getElementById('depo-dots');
+  let depoIndex = 0;
+  let depoTimer;
+
+  for (let i = 0; i < depoTotal; i++) {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
+    dot.className = 'w-2.5 h-2.5 rounded-full transition ' + (i === 0 ? 'bg-lab' : 'bg-ink/20');
+    dot.onclick = () => depoGoTo(i);
+    depoDotsWrap.appendChild(dot);
+  }
+
+  function depoRender() {
+    depoTrack.style.transform = `translateX(-${depoIndex * 100}%)`;
+    [...depoDotsWrap.children].forEach((dot, i) => {
+      dot.classList.toggle('bg-lab', i === depoIndex);
+      dot.classList.toggle('bg-ink/20', i !== depoIndex);
+    });
+  }
+
+  function depoGoTo(i) {
+    depoIndex = i;
+    depoRender();
+    depoResetTimer();
+  }
+
+  function depoMove(dir) {
+    depoIndex = (depoIndex + dir + depoTotal) % depoTotal;
+    depoRender();
+    depoResetTimer();
+  }
+
+  function depoResetTimer() {
+    clearInterval(depoTimer);
+    depoTimer = setInterval(() => depoMove(1), 7000);
+  }
+
+  depoRender();
+  depoResetTimer();
+</script>
+
+</body>
+</html>
